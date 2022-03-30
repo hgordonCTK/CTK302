@@ -3,8 +3,8 @@ let frogPos;
 let state = 0;
 let timer = 0;
 let maxCars = 5;
-let maxTimer = 10 ;
-let score = 0 ;
+let maxTimer = 10;
+let score = 0;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -45,9 +45,9 @@ function draw() {
       break;
   }
 
-    fill("white") ;
-  textSize(24) ;
-  text("score = "+ score, 30, 30) ;
+  fill("white");
+  textSize(24);
+  text("score = " + score, 30, 30);
 }
 
 function game() {
@@ -59,7 +59,7 @@ function game() {
 
     if (cars[i].pos.dist(frogPos) < 50) {
       cars.splice(i, 1);
-      score++ ;
+      score++;
     }
   }
 
@@ -70,15 +70,15 @@ function game() {
 
   // frog
   fill("tan");
-  ellipse(frogPos.x , frogPos.y - 50, 75, 75);
-   ellipse(frogPos.x + 45, frogPos.y - 22 , 30, 30)
-   ellipse(frogPos.x - 45, frogPos.y - 22 , 30, 30)
-  fill ("black");
-     rect(frogPos.x + 35, frogPos.y - 15 , 20, 30)
-   rect(frogPos.x - 55, frogPos.y - 15 , 20, 30)
-  fill ("grey")
-   rect(frogPos.x - 55, frogPos.y - 65 , 20, 30)
-     rect(frogPos.x + 37, frogPos.y - 65 , 20, 30)
+  ellipse(frogPos.x, frogPos.y - 50, 75, 75);
+  ellipse(frogPos.x + 45, frogPos.y - 22, 30, 30)
+  ellipse(frogPos.x - 45, frogPos.y - 22, 30, 30)
+  fill("black");
+  rect(frogPos.x + 35, frogPos.y - 15, 20, 30)
+  rect(frogPos.x - 55, frogPos.y - 15, 20, 30)
+  fill("grey")
+  rect(frogPos.x - 55, frogPos.y - 65, 20, 30)
+  rect(frogPos.x + 37, frogPos.y - 65, 20, 30)
 
 
 
@@ -106,7 +106,7 @@ class Car {
     fill(this.r, this.b, this.g, this);
     ellipse(this.pos.x, this.pos.y, 75, 75);
     ellipse(this.pos.x, this.pos.y + 40, 30, 30);
-       fill ("gray");
+    fill("gray");
     rect(this.pos.x + 10, this.pos.y + 30, 100, 20);
 
 
@@ -127,10 +127,10 @@ class Car {
 function checkForKeys() {
   if (keyIsDown(LEFT_ARROW)) {
     frogPos.x -= 5;
-    if (frogPos.x < 0) frogPos.x = width ;
+    if (frogPos.x < 0) frogPos.x = width;
   }
 
-  if (keyIsDown(RIGHT_ARROW)) frogPos.x += 5 ;
+  if (keyIsDown(RIGHT_ARROW)) frogPos.x += 5;
   if (keyIsDown(UP_ARROW)) frogPos.y -= 5;
   if (keyIsDown(DOWN_ARROW)) frogPos.y += 5;
 }
