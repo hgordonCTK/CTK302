@@ -1,56 +1,42 @@
-let state = 0;
-let song1, song2, song3;
-
-function preload() {
-  song1 = loadsound("assets/mp1.mp3")
-  song2 = loadsound("assets/mp2.mp3")
-  song3 = loadsound("assets/mp3.mp3")
-}
+let x = 0
 
 function setup() {
-  createCanvas(500, 500);
-
+  createCanvas(800, 800);
 }
 
 function draw() {
-  switch (state) {
-    case 0:
-      song1.play();
-      state = 1;
-      break;
+  background(220);
 
-    case 1:
-      background("red");
-      break;
-
-    case 2:
-      song2.play();
-      state = 3;
-      break;
-
-    case 3:
-      background("blue")
-      break;
-
-    case 4:
-      song3.play();
-      break;
-
-    case 5;
-    background("yellow")
-    break;
-
-    case 6:
-      break;
+  push() ;
+  translate(x, 0) ;
+  avatar() ;
+  x += 5 ;
+  if (x> width) {
+    x = -400 ;
   }
+  pop() ;
+
 }
 
-function mouseReleased() {
-  state++;
-  song1.pause()
-  song2.pause()
-  song3.pause()
-  if (state > 5)(
-    state = 0;
-  )
-}
+function avatar() {
+
+   fill("pink");
+      ellipse(457, 387, 500, 500);
+      fill ("white")
+      ellipse(290, 305, 270, 270);
+      ellipse(290, 305, 270, 270);
+       fill ("white")
+       ellipse(457, 337, 220, 220);
+      fill ("black")
+       ellipse(457, 337, 120, 120);
+     ellipse(290, 305, 170, 170);
+      fill ("red")
+      ellipse(290, 305, 150, 150);
+       fill ("black")
+      ellipse(290, 305, 70, 70);
+       fill ("black")
+      ellipse(240, 335, 30, 30);
+          fill ("black")
+      ellipse(340, 335, 30, 30);
+       fill ("black")
+      ellipse(290, 250, 30, 30);
