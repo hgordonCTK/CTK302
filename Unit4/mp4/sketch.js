@@ -1,7 +1,22 @@
+// must be in HTTPS
 function setup() {
-  createCanvas(500, 500);
+  createCanvas(windowWidth, windowHeight);
+  console.log('starting');
+	noStroke();
+  // get position once
+  if (!navigator.geolocation) {
+    alert("navigator.geolocation is not available");
+  }
+  navigator.geolocation.getCurrentPosition(setPos);
 }
 
-function draw() {
-
+function setPos(position) {
+  var lat = position.coords.latitude;
+  var lng = position.coords.longitude;
+  background(0);
+  fill(255);
+  textSize(32);
+  text("Current posish: " + nf(lat,2,2) + " " + nf(lng,2,2), 10, height/2);
+  textSize(32);
+  text("taco bell " + 40.51 + " " + 88.95, 125, 50);
 }
