@@ -1,10 +1,7 @@
 // must be in HTTPS
-let taco;
 
-function preload() {
-  taco = LoadImage('mp4/taco.png')
-}
-
+  
+ 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   console.log('starting');
@@ -19,12 +16,11 @@ function setup() {
 function setPos(position) {
   var lat = position.coords.latitude;
   var lng = position.coords.longitude;
-  background(0);
-  fill(255);
+ 
+fill(255);
   textSize(32);
   text("Current posish: " + nf(lat, 2, 2) + " " + nf(lng, 2, 2), 10, height / 2);
   textSize(32);
   text("taco bell " + 40.51 + " " + 88.95, 125, 50);
+
 }
-show()
-  image(taco, this.x, this.y);
